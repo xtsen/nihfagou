@@ -1,0 +1,96 @@
+div#details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+div#details > div {
+    background-color: var(--secondary-background);
+    border-radius: 10px;
+}
+nav#backBar {
+    background-color: var(--secondary-background);
+    width: 100vw;
+    height: fit-content;
+    padding: 1%;
+}
+nav#backBar > p {
+    padding: 1%;
+    font-size: 150%;
+    font-weight: bold;
+    margin-left: 2%;
+    width: fit-content;
+    background: linear-gradient(120deg, var(--blue) 0%, var(--blue) 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 70%;
+    background-position: 0% 70%;
+    color: var(--color);
+    cursor: pointer;
+    transition: all 0.7s ease;
+}
+nav#backBar > p:hover {
+    background-size: 100% 70%;
+}
+div#details > div#infos {
+    width: 30vw;
+    padding: 2.5%;
+}
+div#details > div#infos > p {
+    font-size: var(--h3);
+    font-weight: 500;
+}
+div#details > div#infos > p#name {
+    font-size: var(--headerText);
+    font-weight: bold;
+}
+div#details > div#infos > p#subInfos {
+    margin-top: 10%;
+}
+div#details > div#infos > p#price {
+    font-size: var(--headerText);
+    font-weight: bold;
+    width: fit-content;
+    background: linear-gradient(120deg, var(--blue) 0%, var(--blue) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 15%;
+    background-position: 0 70%;
+    color: var(--color);
+    text-decoration: none;
+    margin-top: 10%;
+    padding: 2%;
+    border-radius: 5px;
+    cursor: default;
+}
+div#details > div#infos > button#addToFavorite {
+    padding: 4%;
+    margin-top: 5%;
+    border: 1px solid var(--blue);
+    background: var(--blue);
+    color: var(--color);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    display: flex;
+    transition: all 0.3s ease;
+    align-items: center;
+}
+div#details > div#infos > button#addToFavorite:hover {
+    background: var(--blueHovered);
+}
+#success {
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    background-color: rgba(22, 180, 88, 0.787);
+    border-radius: 15px;
+    transform: translateY(200%);
+    transition: all 0.5s ease;
+}

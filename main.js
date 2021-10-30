@@ -1,4 +1,3 @@
-// import products from "./data.js";
 const products = [
     {
         id: 0,
@@ -27,7 +26,7 @@ const products = [
     {
         id: 3,
         name: "iPhone SE 2",
-        price: 260,
+        price: 340,
         category: "phone",
         color: "Noir",
         storage: 64,
@@ -56,7 +55,15 @@ function load() {
         mobileCreatePopups()
     }
 }
-
+function createGallery(items) {
+    document.getElementById('gallery').innerHTML = ""
+    index = 0
+    itemsSorted = sortItems(items)
+    while (index != items.length ) {
+        newItem(index, itemsSorted)
+        index+=1
+    }
+}
 function newItem(index, items) {
     product = items[index]
 
@@ -64,6 +71,7 @@ function newItem(index, items) {
     itemContainer = document.createElement('div')
     itemContainer.setAttribute("id", "item" + String(index))
     itemContainer.setAttribute("class", "item")
+    itemContainer.setAttribute("onclick", `sendData('${String(product.id)}')`)
     document.getElementById("gallery").appendChild(itemContainer)
 
     // Image
@@ -103,24 +111,19 @@ function newItem(index, items) {
 }
 function initGallery() {
     itemsSorted = []
-    itemsSorted = sortItems()
+    itemsSorted = sortItems(itemsSorted)
     nbItems = products.length
     item = 0
 
     document.getElementById('gallery').innerHTML = ""
-    while (item != nbItems) {
-        
-        newItem(item, itemsSorted)
-
-        item += 1
-
-    }
+    createGallery(products)
 }
-function sortItems() {
+function sortItems(list) {
     prices = []
-    items = []
+    items = list
+    itemSorted = []
     sortingMethods = document.getElementById('sortedData').value
-    products.forEach(product => {
+    items.forEach(product => {
         prices.push(product.price)
     });
     if (sortingMethods == 'price-increase') {
@@ -131,14 +134,14 @@ function sortItems() {
     }
     i = 0
     while (i != prices.length) {
-        products.forEach(product => {
+        items.forEach(product => {
             if (product.price == prices[i]) {
-                items.push(product)
+                itemSorted.push(product)
                 i += 1
             }
         })
     }
-    return items
+    return itemSorted
 }
 filterColor = []
 
@@ -154,15 +157,17 @@ function addFilter(nameFilter, valueFilter) {
 function colorFilter() {
     nbItems = products.length
     item = 0
+    itemsFiltered = []
     document.getElementById('gallery').innerHTML = ""
     while (item != nbItems) {
         filterColor.forEach(colorId => {
             if (products[item].color == colorId) {
-                newItem(item)
+                itemsFiltered.push(products[item])
             }
         });
         item += 1
     }
+    createGallery(itemsFiltered)
 }
 function mobileCreatePopups() {
     filtersElement = document.getElementById('filters')
@@ -197,10 +202,16 @@ document.querySelectorAll('.colorFilter').forEach(function(el){
             if (filterColor.length == 0) {
                 initGallery()
             }else {
-                filterColor.forEach(color => {
-                    colorFilter(color)
-                });
+                colorFilter()
             }
         }
     });
 });
+
+function sendData(productID) {
+    window.localStorage.setItem('product', productID)
+    window.location.href = "details.html"
+}
+function goThere(where) {
+    window.location.href = where + ".html"
+}

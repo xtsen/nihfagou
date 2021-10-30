@@ -1,0 +1,123 @@
+<!--
+
+===          ===     =============   ===========        ==========    ====      |
+   ===    ===              |         \                  |             |   \     |
+      ====         X       |    T     \ ========  S     ========   E  |    \    |   N
+   ===    ===              |                   /        |             |     \   |
+===          ===           |         =========/   *     ==========    |      ====
+
+2021
+
+instagram : @nesta.web
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nihfagou</title>
+        <link rel="stylesheet" href="./default.css">
+        <link rel="stylesheet" href="./mobile.css">
+        <link rel="stylesheet" href="./details.css">
+
+        <!-- meta -->
+        <meta name="description" content="Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service">
+    </head>
+    <body onload="initDetails()">
+
+        <nav id="backBar">
+            <p onclick="goThere('index')"> Retour</p>
+        </nav>
+        <div id="bannerPromo">
+            <p>Cet article est actuellement en promotion mais cela risque de ne pas durer !</p>
+        </div>
+        <div id="details">
+            <div id="imgFrame"></div>
+            <div id="infos">
+                <p id="name"></p>
+                <p id="subInfos"></p>
+                <p id="price"></p>
+                <button id="addToFavorite" onclick="successfullyAdded()">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.995 7.23319C10.5455 5.60999 8.12832 5.17335 6.31215 6.65972C4.49599 8.14609 4.2403 10.6312 5.66654 12.3892L11.995 18.25L18.3235 12.3892C19.7498 10.6312 19.5253 8.13046 17.6779 6.65972C15.8305 5.18899 13.4446 5.60999 11.995 7.23319Z" clip-rule="evenodd"></path>
+                      </svg>
+                    Ajouter à votre liste de favori
+                </button>
+            </div>
+        </div>
+        <div id="success">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.75 12.8665L8.33995 16.4138C9.15171 17.5256 10.8179 17.504 11.6006 16.3715L18.25 6.75"></path>
+              </svg>
+              
+            <p>Cet article a été ajouté à vos favoris</p>
+        </div>
+        <footer>
+            <h2 class="titleSection">A propos : </h2>
+            <div id="sectionsFooter">
+                <div class="sectionFooter">
+                    <h3 class="titleSectionFooter">Mes reseaux</h3>
+                    <div class="linksFooter">
+                        <a href="/index.html" class="link">
+                            <p>Instagram</p>
+                        </a>
+                        <a href="/index.html" class="link">
+                            <p>Snapchat</p>
+                        </a>
+                        <a href="/index.html" class="link">
+                            <p>Telegram</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="sectionFooter">
+                    <h3 class="titleSectionFooter">Informations</h3>
+                    <div class="linksFooter">
+                        <a href="/index.html" class="link">
+                            <p>Adresse</p>
+                        </a>
+                        <a href="/index.html" class="link">
+                            <p>Déroulement du service</p>
+                        </a>
+                        <a href="/index.html" class="link">
+                            <p>Mes services</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="sectionFooter">
+                    <h3 class="titleSectionFooter">Naviguer</h3>
+                    <div class="linksFooter">
+                        <a href="/index.html?id=header" class="link js-scrollTo">
+                            <p>Haut de la page</p>
+                        </a>
+                        <a href="/index.html?id=main" class="link js-scrollTo">
+                            <p>Galerie</p>
+                        </a>
+                        <a href="/index.html?id=copyrights" class="link js-scrollTo">
+                            <p>Bas de la page</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="copyrights">
+                <p class="copyright">copyright Xtsen 2021</p>
+                <p class="copyright">Termes et conditions</p>
+                <p class="copyright link">@nesta.web</p>
+            </div>
+        </footer>
+        <input type="checkbox" id="popupFilterCheck" style="display: none">
+        <script src="./details.js"></script>
+        <script src="./main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+                    var page = $(this).attr('href'); // Page cible
+                    var speed = 600; // Durée de l'animation (en ms)
+                    $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>
