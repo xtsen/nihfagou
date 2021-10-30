@@ -125,11 +125,9 @@ function sortItems() {
     });
     if (sortingMethods == 'price-increase') {
         prices.sort()
-        console.log(prices);
     }else if (sortingMethods == 'price-decrease') {
         prices.sort()
         prices.reverse()
-        console.log(prices);
     }
     i = 0
     while (i != prices.length) {
@@ -140,7 +138,6 @@ function sortItems() {
             }
         })
     }
-    console.log(items);
     return items
 }
 filterColor = []
@@ -166,7 +163,6 @@ function colorFilter() {
         });
         item += 1
     }
-    console.log(filterColor);
 }
 function mobileCreatePopups() {
     filtersElement = document.getElementById('filters')
