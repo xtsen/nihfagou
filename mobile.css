@@ -27,6 +27,9 @@
         margin-left: 5%;  
         width: 85%;
     }
+    main > section#rightSection > div#gallery {
+        justify-content: center;
+    }
     main > section#rightSection > div#gallery > .item {
         display: flex;
         flex-direction: row;

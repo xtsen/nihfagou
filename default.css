@@ -164,6 +164,12 @@ main > section#leftSection > div#filters > div.filter > div.options > div.option
     margin-top: 2%;
     font-size: 110%;
 }
+main > section#leftSection > div#filters > div.filter > div.options > div.option > *{
+    cursor: pointer;
+}
+main > section#leftSection > div#filters > div.filter > div.options > div.option > input[type="checkbox"] {
+    display: none;
+}
 main > section#leftSection > div#filters > button#updateGallery {
     padding: 8%;
     border: none;
@@ -182,6 +188,24 @@ main > section#leftSection > div#filters > button#updateGallery {
 main > section#leftSection > div#filters > button#updateGallery:hover {
     background: #11111a;
 }
+.labelFilter {
+    background: linear-gradient(120deg, var(--blue) 0%, var(--blue) 100%);
+    background-repeat: no-repeat;
+    background-size: 10% 70%;
+    background-position: 0 70%;
+    color: var(--color);
+    text-decoration: none;
+    padding: 2%;
+    border-radius: 5px;
+    cursor: default;
+    transition: all 0.7s ease;
+}
+.labelFilter:hover {
+    background-size: 100% 70%;
+}
+.selectedFilter {
+    background-size: 100% 70%;
+}
 main > section#rightSection {
     margin-right: 2.5%;
     width: 70%;
@@ -190,7 +214,7 @@ main > section#rightSection > div#gallery {
     display: flex;
     padding-left: 4%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
 }
 main > section#rightSection > div#gallery > .item {
     display: flex;
