@@ -142,4 +142,22 @@
         margin-top: 5%;
         text-align: center;
     }
+
+    /* Details */
+    div#details {
+        flex-direction: column;
+        justify-content: center;
+    }
+    div#details > div#imgFrame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        margin: 5% auto 0;
+    }
+    div#details > div#infos {
+        width: 80vw;
+        padding: 5%;
+        margin: 5% auto 0;
+    }
 }

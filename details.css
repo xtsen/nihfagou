@@ -30,9 +30,11 @@ nav#backBar > p {
 nav#backBar > p:hover {
     background-size: 100% 70%;
 }
-div#details > div#infos {
-    width: 30vw;
-    padding: 2.5%;
+@media screen and (min-width: 768px) {
+    div#details > div#infos {
+        width: 30vw;
+        padding: 2.5%;
+    }
 }
 div#details > div#infos > p {
     font-size: var(--h3);
