@@ -21,7 +21,7 @@ instagram : @nesta.web
         <link rel="stylesheet" href="mobile.css">
     </head>
     <body onload="initGallery()">
-        <header>
+        <header id="header">
             <svg id="headerBackground" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="800" preserveAspectRatio="none" viewBox="0 0 1440 800">
                 <g mask="url(&quot;#SvgjsMask1155&quot;)" fill="none">
                     <rect width="1440" height="800" x="0" y="0" fill="rgba(30, 29, 43, 1)"></rect>
@@ -38,10 +38,10 @@ instagram : @nesta.web
                 <h1><span class="blueHighlight">Nihfagou</span></h1>
                 <h1>Products</h1>
                 <p id="heroDescription">Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service.</p>
-                <a id="linkToGallery" href="#gallery" class="js-scrollTo"><button id="cta">Découvrir</button></a>
+                <a id="linkToGallery" href="#main" class="js-scrollTo"><button id="cta">Découvrir</button></a>
             </div>
         </header>
-        <main>
+        <main id="main">
             <section id="leftSection" class="section">
                 <div id="filters">
                     <h2 class="titleSection">Filtres : </h2>
@@ -87,7 +87,7 @@ instagram : @nesta.web
         </main>
         <footer>
             <h2 class="titleSection">A propos : </h2>
-            <div class="sectionsFooter">
+            <div id="sectionsFooter">
                 <div class="sectionFooter">
                     <h3 class="titleSectionFooter">Mes reseaux</h3>
                     <div class="linksFooter">
@@ -119,17 +119,22 @@ instagram : @nesta.web
                 <div class="sectionFooter">
                     <h3 class="titleSectionFooter">Naviguer</h3>
                     <div class="linksFooter">
-                        <a href="" class="link">
+                        <a href="#header" class="link js-scrollTo">
                             <p>Haut de la page</p>
                         </a>
-                        <a href="" class="link">
+                        <a href="#main" class="link js-scrollTo">
                             <p>Galerie</p>
                         </a>
-                        <a href="" class="link">
+                        <a href="#copyrights" class="link js-scrollTo">
                             <p>Bas de la page</p>
                         </a>
                     </div>
                 </div>
+            </div>
+            <div id="copyrights">
+                <p class="copyright">copyright Xtsen 2021</p>
+                <p class="copyright">Termes et conditions</p>
+                <p class="copyright link">@nesta.web</p>
             </div>
         </footer>
         <!-- <script type="module" src="./app.js"></script> -->
