@@ -136,57 +136,42 @@ main > section.section {
     border-radius: 10px;
     padding: 2%;
 }
+main > nav#navMobileFilter {
+    display: none;
+}
 main > section#leftSection {
     width: 20%;
     margin-right: 5%;
     margin-left: 2.5%;
 }
-main > section#leftSection > div#filters > h2.titleSection{
+div#filters > h2.titleSection{
     font-size: var(--headerText);
     margin-bottom: 15%;
 }
-main > section#leftSection > div#filters > div.filter {
+div#filters > div.filter {
     display: flex;
     flex-direction: column;
     padding-left: 10%;
 }
-main > section#leftSection > div#filters > div.filter > p.titleFilter{
+div#filters > div.filter > p.titleFilter{
     font-size: 120%;
     font-weight: 600;
 }
-main > section#leftSection > div#filters > div.filter > div.options{
+div#filters > div.filter > div.options{
     display: flex;
     flex-direction: column;
     padding-left: 10%;
     margin-top: 5%;
 }
-main > section#leftSection > div#filters > div.filter > div.options > div.option {
+div#filters > div.filter > div.options > div.option {
     margin-top: 2%;
     font-size: 110%;
 }
-main > section#leftSection > div#filters > div.filter > div.options > div.option > *{
+div#filters > div.filter > div.options > div.option > *{
     cursor: pointer;
 }
-main > section#leftSection > div#filters > div.filter > div.options > div.option > input[type="checkbox"] {
+div#filters > div.filter > div.options > div.option > input[type="checkbox"] {
     display: none;
-}
-main > section#leftSection > div#filters > button#updateGallery {
-    padding: 8%;
-    border: none;
-    background: var(--primary-background);
-    color: var(--color);
-    border-radius: 20px;
-    text-align: center;
-    font-size: var(--normal);
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 10%;
-    transition: all 0.3s ease;
-    padding-left: 10%;
-
-}
-main > section#leftSection > div#filters > button#updateGallery:hover {
-    background: #11111a;
 }
 .labelFilter {
     background: linear-gradient(120deg, var(--blue) 0%, var(--blue) 100%);
@@ -205,6 +190,9 @@ main > section#leftSection > div#filters > button#updateGallery:hover {
 }
 .selectedFilter {
     background-size: 100% 70%;
+}
+main > div#popupFilters {
+    display: none;
 }
 main > section#rightSection {
     margin-right: 2.5%;
@@ -268,6 +256,7 @@ footer > div#sectionsFooter {
 footer > h2.titleSection {
     margin-left: 5%;
     font-size: 200%;
+    width: fit-content;
 }
 footer > div#sectionsFooter > div.sectionFooter {
     margin-right: 10%;

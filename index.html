@@ -20,7 +20,7 @@ instagram : @nesta.web
         <link rel="stylesheet" href="default.css">
         <link rel="stylesheet" href="mobile.css">
     </head>
-    <body onload="initGallery()">
+    <body onload="load()">
         <header id="header">
             <svg id="headerBackground" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="800" preserveAspectRatio="none" viewBox="0 0 1440 800">
                 <g mask="url(&quot;#SvgjsMask1155&quot;)" fill="none">
@@ -50,6 +50,7 @@ instagram : @nesta.web
             </div>
         </header>
         <main id="main">
+            
             <section id="leftSection" class="section">
                 <div id="filters">
                     <h2 class="titleSection">Filtres : </h2>
@@ -82,8 +83,6 @@ instagram : @nesta.web
                             </div>
                         </div>
                     </div>
-
-                    <button id="updateGallery" type="button">Mettre à jour</button>
                 </div>
             </section>
 
@@ -92,6 +91,14 @@ instagram : @nesta.web
                     
                 </div>
             </section>
+            <nav id="navMobileFilter">
+                <h3 id="filterTitlePopup" onclick="showPopup('filter')">Filtres</h3>
+                <h3 onclick="showPopup('filter')">Trier</h3>
+            </nav>
+            
+            <div id="popupFilter">
+
+            </div>
         </main>
         <footer>
             <h2 class="titleSection">A propos : </h2>
@@ -145,6 +152,7 @@ instagram : @nesta.web
                 <p class="copyright link">@nesta.web</p>
             </div>
         </footer>
+        <input type="checkbox" id="popupFilterCheck" style="display: none">
         <!-- <script type="module" src="./app.js"></script> -->
         <script src="./app.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

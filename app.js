@@ -50,6 +50,13 @@ const products = [
     },
 ]
 
+function load() {
+    initGallery()
+    if (window.innerWidth <= 768) {
+        mobileCreatePopups()
+    }
+}
+
 function newItem(index) {
     product = products[index]
 
@@ -94,7 +101,6 @@ function newItem(index) {
     document.getElementById("price" + String(index)).innerText = product.price + " €"
 }
 function initGallery() {
-
     nbItems = products.length
     item = 0
     document.getElementById('gallery').innerHTML = ""
@@ -130,8 +136,24 @@ function colorFilter() {
         });
         item += 1
     }
+    console.log(filterColor);
 }
-
+function mobileCreatePopups() {
+    filtersElement = document.getElementById('filters')
+    document.getElementById("popupFilter").appendChild(filtersElement)
+}
+function showPopup(which) {
+    checkbox = document.getElementById("popupFilterCheck")
+    if (checkbox.checked == true) {
+        document.getElementById("filterTitlePopup").innerText = "Filtres"
+        document.getElementById("popupFilter").style.display="none"
+        checkbox.checked = false
+    }else {
+        document.getElementById("popupFilter").style.display="flex"
+        document.getElementById("filterTitlePopup").innerText = "Retour"
+        checkbox.checked = true
+    }
+}
 document.querySelectorAll('.colorFilter').forEach(function(el){
     el.addEventListener('click', function() {
         input = document.getElementById((this.id).toLowerCase())

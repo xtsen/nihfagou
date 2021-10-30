@@ -6,8 +6,6 @@
         --h3: 130%;
         --normal: 100%;
     }
-
-
     /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
     /* ≠≠≠≠≠≠≠≠≠ header ≠≠≠≠≠≠≠≠≠ */
     /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
@@ -19,13 +17,38 @@
     /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
     /* ≠≠≠≠≠≠≠≠≠≠ main ≠≠≠≠≠≠≠≠≠≠ */
     /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
-    
+    main {
+        max-width: 97vw;
+        flex-direction: column;
+    }
     main > section#leftSection {
         display: none;
     }
+
+    main > nav#navMobileFilter {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 10%;
+        background-color: var(--primary-background);
+        z-index: 1000;
+        justify-content: space-around;
+        align-items: center;
+    }
+    main > nav#navMobileFilter > h3 {
+        font-size: 130%;
+        background-color: var(--tertiary-background);
+        padding: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+        border-radius: 10px;
+        cursor: pointer;
+    }
     main > section#rightSection {
         margin-left: 5%;  
-        width: 85%;
+        width: 90%;
     }
     main > section#rightSection > div#gallery {
         justify-content: center;
@@ -59,7 +82,27 @@
     .price {
         margin-top: 5%;
     }
-    
+    main > div#popupFilter {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 90vh;
+        background-color: var(--primary-background);
+        z-index: 1000;
+        justify-content: space-around;
+        align-items: center;
+    }
+    main > div#popupFilter > h3 {
+        transition: all 0.3s ease;
+    }
+    main > div#popupFilter > div#filters {
+        padding: 10%;
+        width: 80%;
+        border-radius: 5px;
+    }
     /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
     /* ≠≠≠≠≠≠≠≠≠ footer ≠≠≠≠≠≠≠≠≠ */
     /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
