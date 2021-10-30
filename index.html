@@ -19,6 +19,9 @@ instagram : @nesta.web
         <title>Nihfagou</title>
         <link rel="stylesheet" href="default.css">
         <link rel="stylesheet" href="mobile.css">
+
+        <!-- meta -->
+        <meta name="description" content="Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service">
     </head>
     <body onload="load()">
         <header id="header">
@@ -87,13 +90,19 @@ instagram : @nesta.web
             </section>
 
             <section id="rightSection" class="section">
+                <div id="sortItems">
+                    <p>Tier par : </p>
+                    <select name="sortedData" id="sortedData" onchange="initGallery()">
+                        <option value="price-increase">prix croissant</option>
+                        <option value="price-decrease">prix décroissant</option>
+                    </select>
+                </div>
                 <div id="gallery">
                     
                 </div>
             </section>
             <nav id="navMobileFilter">
                 <h3 id="filterTitlePopup" onclick="showPopup('filter')">Filtres</h3>
-                <h3 onclick="showPopup('filter')">Trier</h3>
             </nav>
             
             <div id="popupFilter">
@@ -106,13 +115,13 @@ instagram : @nesta.web
                 <div class="sectionFooter">
                     <h3 class="titleSectionFooter">Mes reseaux</h3>
                     <div class="linksFooter">
-                        <a href="" class="link">
+                        <a href="/index.html" class="link">
                             <p>Instagram</p>
                         </a>
-                        <a href="" class="link">
+                        <a href="/index.html" class="link">
                             <p>Snapchat</p>
                         </a>
-                        <a href="" class="link">
+                        <a href="/index.html" class="link">
                             <p>Telegram</p>
                         </a>
                     </div>
@@ -120,13 +129,13 @@ instagram : @nesta.web
                 <div class="sectionFooter">
                     <h3 class="titleSectionFooter">Informations</h3>
                     <div class="linksFooter">
-                        <a href="" class="link">
+                        <a href="/index.html" class="link">
                             <p>Adresse</p>
                         </a>
-                        <a href="" class="link">
+                        <a href="/index.html" class="link">
                             <p>Déroulement du service</p>
                         </a>
-                        <a href="" class="link">
+                        <a href="/index.html" class="link">
                             <p>Mes services</p>
                         </a>
                     </div>
@@ -134,13 +143,13 @@ instagram : @nesta.web
                 <div class="sectionFooter">
                     <h3 class="titleSectionFooter">Naviguer</h3>
                     <div class="linksFooter">
-                        <a href="#header" class="link js-scrollTo">
+                        <a href="/index.html?id=header" class="link js-scrollTo">
                             <p>Haut de la page</p>
                         </a>
-                        <a href="#main" class="link js-scrollTo">
+                        <a href="/index.html?id=main" class="link js-scrollTo">
                             <p>Galerie</p>
                         </a>
-                        <a href="#copyrights" class="link js-scrollTo">
+                        <a href="/index.html?id=copyrights" class="link js-scrollTo">
                             <p>Bas de la page</p>
                         </a>
                     </div>

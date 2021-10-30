@@ -198,6 +198,25 @@ main > section#rightSection {
     margin-right: 2.5%;
     width: 70%;
 }
+main > section#rightSection > div#sortItems {
+    display: flex;
+    padding: 2% 5% 2% 5%;
+    border-radius: 5px;margin-bottom: 5%;
+    background-color: var(--tertiary-background);
+    width: 30%;
+    margin-left: 55%;
+    font-size: 120%;
+}
+main > section#rightSection > div#sortItems > select#sortedData {
+    background-color: transparent;
+    color: var(--color);
+    border: none;
+    font-size: 90%;
+    margin-left: 5%;
+}
+main > section#rightSection > div#sortItems > select#sortedData:focus {
+    outline: none;
+}
 main > section#rightSection > div#gallery {
     display: flex;
     padding-left: 4%;

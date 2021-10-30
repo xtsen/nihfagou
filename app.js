@@ -57,8 +57,8 @@ function load() {
     }
 }
 
-function newItem(index) {
-    product = products[index]
+function newItem(index, items) {
+    product = items[index]
 
     // Container item
     itemContainer = document.createElement('div')
@@ -70,6 +70,7 @@ function newItem(index) {
     img = document.createElement("img")
     img.setAttribute("class", "imgProduct")
     img.setAttribute("src", `res/${product.category}/${(product.name.replace(/\s+/g, '')).toLowerCase() + product.color + String(product.storage)}.png`)
+    img.setAttribute("alt", "l'image de presentation du produit")
     document.getElementById("item" + String(index)).appendChild(img) 
     
     // Container Infos
@@ -101,18 +102,47 @@ function newItem(index) {
     document.getElementById("price" + String(index)).innerText = product.price + " €"
 }
 function initGallery() {
+    itemsSorted = []
+    itemsSorted = sortItems()
     nbItems = products.length
     item = 0
+
     document.getElementById('gallery').innerHTML = ""
     while (item != nbItems) {
         
-        newItem(item)
+        newItem(item, itemsSorted)
 
         item += 1
 
     }
 }
-
+function sortItems() {
+    prices = []
+    items = []
+    sortingMethods = document.getElementById('sortedData').value
+    products.forEach(product => {
+        prices.push(product.price)
+    });
+    if (sortingMethods == 'price-increase') {
+        prices.sort()
+        console.log(prices);
+    }else if (sortingMethods == 'price-decrease') {
+        prices.sort()
+        prices.reverse()
+        console.log(prices);
+    }
+    i = 0
+    while (i != prices.length) {
+        products.forEach(product => {
+            if (product.price == prices[i]) {
+                items.push(product)
+                i += 1
+            }
+        })
+    }
+    console.log(items);
+    return items
+}
 filterColor = []
 
 function addFilter(nameFilter, valueFilter) {
