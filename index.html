@@ -1,3 +1,15 @@
+<!--
+
+===          ===     =============   ===========        ==========    ====      |
+   ===    ===              |         \                  |             |   \     |
+      ====         X       |    T     \ ========  S     ========   E  |    \    |   N
+   ===    ===              |                   /        |             |     \   |
+===          ===           |         =========/   *     ==========    |      ====
+
+2021
+
+instagram : @nesta.web
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +19,7 @@
         <title>Nihfagou</title>
         <link rel="stylesheet" href="default.css">
     </head>
-    <body>
+    <body onload="initGallery()">
         <header>
             <svg id="headerBackground" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="800" preserveAspectRatio="none" viewBox="0 0 1440 800">
                 <g mask="url(&quot;#SvgjsMask1155&quot;)" fill="none">
@@ -25,9 +37,68 @@
                 <h1><span class="blueHighlight">Nihfagou</span></h1>
                 <h1>Products</h1>
                 <p id="heroDescription">Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service.</p>
-                <button id="cta">Découvrir</button>
+                <a id="linkToGallery" href="#gallery" class="js-scrollTo"><button id="cta">Découvrir</button></a>
             </div>
         </header>
-        <script src="app.js"></script>
+        <main>
+            <section id="leftSection" class="section">
+                <div id="filters">
+                    <h2 class="titleSection">Filtres : </h2>
+                    <div class="filter">
+                        <p class="titleFilter">Couleur : </p>
+                        <div class="options">
+                            <div class="option">
+                                <input type="checkbox" name="colorWhite" id="White">
+                                <label for="colorWhite">Blanc</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="colorBlack" id="Black">
+                                <label for="colorBlack">Noir</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="colorGrey" id="Grey">
+                                <label for="colorGrey">Gris</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="colorBlue" id="Blue">
+                                <label for="colorBlue">Bleu</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="colorYellow" id="Yellow">
+                                <label for="colorYellow">Jaune</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="colorRed" id="Red">
+                                <label for="colorRed">Rouge</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="updateGallery" type="button">Mettre à jour</button>
+                </div>
+            </section>
+
+            <section id="rightSection" class="section">
+                <div id="gallery">
+                    
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+        <!-- <script type="module" src="./app.js"></script> -->
+        <script src="./app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+                    var page = $(this).attr('href'); // Page cible
+                    var speed = 600; // Durée de l'animation (en ms)
+                    $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+                    return false;
+                });
+            });
+        </script>
     </body>
 </html>

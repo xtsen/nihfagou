@@ -12,6 +12,7 @@
     --heroTitle: 500%;
     --headerText: 160%;
     --h3: 130%;
+    --normal: 100%;
 
     /* font family */
     --primary-font: 'Open Sans', sans-serif;
@@ -21,11 +22,20 @@ html, * {
     padding: 0;
     margin: 0;
 }
+::selection {
+    color: var(--color);
+    background: var(--primary-background);
+}
 body {
     color: var(--color);
     background-color: var(--primary-background);
     font-family: var(--primary-font);
 }
+
+/* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
+/* ≠≠≠≠≠≠≠≠≠ header ≠≠≠≠≠≠≠≠≠ */
+/* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
+
 header {
     height: 100vh;
     width: 100vw;
@@ -66,14 +76,14 @@ header > div#contentHeader > p#heroDescription {
     letter-spacing: 1px;
     font-size: var(--headerText);
 }
-header > div#contentHeader > button#cta {
-    padding: 2%;
+header > div#contentHeader > a#linkToGallery > button#cta {
+    padding: 8%;
     border: 1px solid var(--blue);
     background: var(--blue);
     color: var(--color);
     border-radius: 20px;
     text-align: center;
-    font-size: 150%;
+    font-size: 140%;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 700;
@@ -81,7 +91,7 @@ header > div#contentHeader > button#cta {
     margin-left: 60px;
     transition: all 0.3s ease;
 }
-header > div#contentHeader > button#cta:hover {
+header > div#contentHeader > a#linkToGallery > button#cta:hover {
     background: var(--blueHovered);
 }
 .blueHighlight {
@@ -93,8 +103,111 @@ header > div#contentHeader > button#cta:hover {
     text-decoration: none;
     padding: 2%;
     border-radius: 5px;
+    cursor: default;
     transition: all 0.7s ease;
 }
 .blueHighlight:hover {
     background-size: 100% 90%;
+}
+
+/* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
+/* ≠≠≠≠≠≠≠≠≠≠ main ≠≠≠≠≠≠≠≠≠≠ */
+/* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 94vh;
+    padding-top: 3%;
+}
+main > section.section {
+    min-height: 85vh;
+    background-color: var(--secondary-background);
+    border-radius: 10px;
+    padding: 2%;
+}
+main > section#leftSection {
+    width: 20%;
+    margin-right: 5%;
+    margin-left: 2.5%;
+}
+main > section#leftSection > div#filters > h2.titleSection{
+    font-size: var(--headerText);
+    margin-bottom: 15%;
+}
+main > section#leftSection > div#filters > div.filter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+}
+main > section#leftSection > div#filters > div.filter > p.titleFilter{
+    font-size: 120%;
+    font-weight: 600;
+}
+main > section#leftSection > div#filters > div.filter > div.options{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    margin-top: 5%;
+}
+main > section#leftSection > div#filters > div.filter > div.options > div.option {
+    margin-top: 2%;
+    font-size: 110%;
+}
+main > section#leftSection > div#filters > button#updateGallery {
+    padding: 8%;
+    border: none;
+    background: var(--primary-background);
+    color: var(--color);
+    border-radius: 20px;
+    text-align: center;
+    font-size: var(--normal);
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10%;
+    transition: all 0.3s ease;
+    padding-left: 10%;
+
+}
+main > section#leftSection > div#filters > button#updateGallery:hover {
+    background: #11111a;
+}
+main > section#rightSection {
+    margin-right: 2.5%;
+    width: 70%;
+}
+main > section#rightSection > div#gallery {
+    display: flex;
+    padding-left: 4%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main > section#rightSection > div#gallery > .item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary-background);
+    margin-right: 4%;
+    padding: 2%;
+    border-radius: 10px;
+    width: 25%;
+    height: 40vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10%;
+}
+main > section#rightSection > div#gallery > .item:hover {
+    box-shadow: 0px 0px 10px #494a5f;
+}
+.imgProduct {
+    width: 100%;
+}
+.nameProduct {
+    margin-top: 5%;
+}
+.descProduct {
+    margin-top: 5%;
+}
+.price {
+    margin-top: 5%;
 }
