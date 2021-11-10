@@ -54,7 +54,7 @@ instagram : @nesta.web
         </header>
         <main id="main">
             
-            <section id="leftSection" class="section">
+            <!-- <section id="leftSection" class="section">
                 <div id="filters">
                     <h2 class="titleSection">Filtres : </h2>
                     <div class="filter">
@@ -87,9 +87,12 @@ instagram : @nesta.web
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <section id="rightSection" class="section">
+                <ul id="pathToHere">
+                    <li onclick="initGallery(true)">Menu</li>
+                </ul>
                 <div id="sortItems">
                     <p>Tier par : </p>
                     <select name="sortedData" id="sortedData" onchange="initGallery()">
@@ -101,13 +104,13 @@ instagram : @nesta.web
                     
                 </div>
             </section>
-            <nav id="navMobileFilter">
+            <!-- <nav id="navMobileFilter">
                 <h3 id="filterTitlePopup" onclick="showPopup('filter')">Filtres</h3>
-            </nav>
+            </nav> -->
             
-            <div id="popupFilter">
+            <!-- <div id="popupFilter">
 
-            </div>
+            </div> -->
         </main>
         <footer>
             <h2 class="titleSection">A propos : </h2>
@@ -143,13 +146,13 @@ instagram : @nesta.web
                 <div class="sectionFooter">
                     <h3 class="titleSectionFooter">Naviguer</h3>
                     <div class="linksFooter">
-                        <a href="/index.html?id=header" class="link js-scrollTo">
+                        <a href="#header" class="link js-scrollTo">
                             <p>Haut de la page</p>
                         </a>
-                        <a href="/index.html?id=main" class="link js-scrollTo">
+                        <a href="#main" class="link js-scrollTo">
                             <p>Galerie</p>
                         </a>
-                        <a href="/index.html?id=copyrights" class="link js-scrollTo">
+                        <a href="#copyrights" class="link js-scrollTo">
                             <p>Bas de la page</p>
                         </a>
                     </div>
@@ -161,7 +164,7 @@ instagram : @nesta.web
                 <a class="copyright link" href="https://www.instagram.com/nesta.web/">@nesta.web</a>
             </div>
         </footer>
-        <input type="checkbox" id="popupFilterCheck" style="display: none">
+        <!-- <input type="checkbox" id="popupFilterCheck" style="display: none"> -->
         <script src="./main.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>

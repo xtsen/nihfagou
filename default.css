@@ -139,12 +139,12 @@ main > section.section {
 main > nav#navMobileFilter {
     display: none;
 }
-main > section#leftSection {
+/* main > section#leftSection {
     width: 20%;
     margin-right: 5%;
     margin-left: 2.5%;
-}
-div#filters > h2.titleSection{
+} */
+/* div#filters > h2.titleSection{
     font-size: var(--headerText);
     margin-bottom: 15%;
 }
@@ -190,22 +190,38 @@ div#filters > div.filter > div.options > div.option > input[type="checkbox"] {
 }
 .selectedFilter {
     background-size: 100% 70%;
-}
-main > div#popupFilters {
+} */
+/* main > div#popupFilters {
     display: none;
-}
+} */
 main > section#rightSection {
-    margin-right: 2.5%;
-    width: 70%;
+    margin: auto;
+    width: 90%;
 }
 main > section#rightSection > div#sortItems {
-    display: flex;
+    display: none;
+    /* display: flex; */
     padding: 2% 5% 2% 5%;
     border-radius: 5px;margin-bottom: 5%;
     background-color: var(--tertiary-background);
     width: 30%;
     margin-left: 55%;
     font-size: 120%;
+}
+main > section#rightSection > ul#pathToHere {
+    margin-bottom: 5%;
+    margin-left: 5%;
+    list-style: none;
+    font-size: 115%;
+    display: flex;
+    flex-direction: row;
+}
+main > section#rightSection > ul#pathToHere > li {
+    cursor: pointer;
+}
+main > section#rightSection > ul#pathToHere > li.separatorCategory {
+    margin-left: 1%;
+    margin-right: 1%;
 }
 main > section#rightSection > div#sortItems > select#sortedData {
     background-color: transparent;
@@ -223,6 +239,24 @@ main > section#rightSection > div#gallery {
     flex-wrap: wrap;
     justify-content: left;
 }
+main > section#rightSection > div#gallery > .category {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--blueHovered);
+    margin-right: 4%;
+    padding: 2%;
+    border-radius: 10px;
+    width: 25%;
+    height: 30vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10%;
+    font-size: 130%;
+}
+main > section#rightSection > div#gallery > .category:hover {
+    background-color: var(--blue);
+}
 main > section#rightSection > div#gallery > .item {
     display: flex;
     flex-direction: column;
@@ -231,7 +265,7 @@ main > section#rightSection > div#gallery > .item {
     padding: 2%;
     border-radius: 10px;
     width: 25%;
-    height: 40vh;
+    height: fit-content;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 10%;
