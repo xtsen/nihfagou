@@ -50,4 +50,3 @@ const products = [
 ]
 
 export default { products }
-// img = lowercase(name) + color + String(storage)
