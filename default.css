@@ -36,7 +36,45 @@ body {
     background-color: var(--primary-background);
     font-family: var(--primary-font);
 }
-
+button#buttonFavorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    z-index: 1000;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--blue);
+    color: var(--color);
+    padding: 1%;
+    cursor: pointer;
+    width: fit-content;
+    overflow: hidden;
+    font-size: 120%;
+    transition: all 0.3s ease;
+    outline: none;
+}
+button#buttonFavorite:hover {
+    background-color: var(--blueHovered);
+    transform: scale(1.05);
+}
+div#wrapper {
+    content: " ";
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    background-color: var(--primary-background);
+    transition: all 1s ease;
+}
+section#content {
+    transition: all 0.3s ease;
+}
 /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
 /* ≠≠≠≠≠≠≠≠≠ header ≠≠≠≠≠≠≠≠≠ */
 /* ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ */
@@ -238,6 +276,8 @@ main > section#rightSection > div#gallery {
     padding-left: 4%;
     flex-wrap: wrap;
     justify-content: left;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 main > section#rightSection > div#gallery > .category {
     display: flex;
@@ -248,11 +288,11 @@ main > section#rightSection > div#gallery > .category {
     padding: 2%;
     border-radius: 10px;
     width: 25%;
-    height: 30vh;
+    height: fit-content;
     cursor: pointer;
-    transition: all 0.3s ease;
     margin-bottom: 10%;
     font-size: 130%;
+    transition: all 1s ease;
 }
 main > section#rightSection > div#gallery > .category:hover {
     background-color: var(--blue);

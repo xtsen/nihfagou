@@ -23,147 +23,161 @@ instagram : @nesta.web
         <!-- meta -->
         <meta name="description" content="Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service">
     </head>
-    <body onload="load()">
-        <header id="header">
-            <svg id="headerBackground" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="800" preserveAspectRatio="none" viewBox="0 0 1440 800">
-                <g mask="url(&quot;#SvgjsMask1155&quot;)" fill="none">
-                    <rect width="1440" height="800" x="0" y="0" fill="rgba(30, 29, 43, 1)"></rect>
-                    <path d="M0,344.648C63.595,345.282,112.659,292.852,164.832,256.484C215.026,221.496,261.875,185.269,298.721,136.422C343.776,76.692,403.431,17.018,401.889,-57.783C400.32,-133.877,345.273,-198.839,290.717,-251.908C239.062,-302.156,171.091,-326.98,102.484,-349.029C32.239,-371.605,-40.437,-399.423,-111.967,-381.324C-184.55,-362.959,-242.357,-308.955,-288.601,-250.074C-333.354,-193.091,-371.809,-125.58,-369.701,-53.155C-367.701,15.586,-316.13,69.806,-277.634,126.791C-245.098,174.954,-208.459,217.336,-162.733,253.217C-112.772,292.421,-63.503,344.015,0,344.648" fill="#14131c"></path>
-                    <path d="M1440 1495.1570000000002C1565.95 1469.442 1626.368 1327.7530000000002 1735.156 1259.271 1845.475 1189.826 2022.408 1209.224 2080.001 1092.279 2137.302 975.927 2053.987 837.739 2001.0639999999999 719.331 1958.501 624.102 1874.32 561.664 1807.166 481.849 1738.775 400.564 1697.283 294.245 1602.7069999999999 245.87199999999996 1499.711 193.19299999999998 1379.925 189.865 1265.187 204.64200000000005 1135.616 221.32899999999995 993.367 240.24 904.303 335.816 814.547 432.134 785.024 576.347 796.598 707.4929999999999 807.133 826.872 922.332 904.98 964.434 1017.184 1011.239 1141.921 961.7239999999999 1303.548 1055.693 1397.993 1150.816 1493.597 1307.8609999999999 1522.135 1440 1495.1570000000002" fill="#29273a"></path>
-                </g>
-                <defs>
-                    <mask id="SvgjsMask1155">
-                        <rect width="1440" height="800" fill="#ffffff"></rect>
-                    </mask>
-                </defs>
-            </svg>
-            <div id="contentHeader">
-                <h1><span class="blueHighlight">Nihfagou</span></h1>
-                <h1>Products</h1>
-                <p id="heroDescription">Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service.</p>
-                <a id="linkToGallery" href="#main" class="js-scrollTo">
-                    <button id="cta">
-                        Découvrir 
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.75 6.75L19.25 12L13.75 17.25"></path>
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H4.75"></path>
-                      </svg>
-                      </button>
-                </a>
+    <body onload="load()" id="body">
+        <div id="wrapper">
+            <div id="favoriteList"></div>
+        </div>
+        <button id="buttonFavorite" onclick="getFavoriteList()">
+            <div id="svgButtonFavorite">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.995 7.23319C10.5455 5.60999 8.12832 5.17335 6.31215 6.65972C4.49599 8.14609 4.2403 10.6312 5.66654 12.3892L11.995 18.25L18.3235 12.3892C19.7498 10.6312 19.5253 8.13046 17.6779 6.65972C15.8305 5.18899 13.4446 5.60999 11.995 7.23319Z" clip-rule="evenodd"></path>
+                </svg>
             </div>
-        </header>
-        <main id="main">
-            
-            <!-- <section id="leftSection" class="section">
-                <div id="filters">
-                    <h2 class="titleSection">Filtres : </h2>
-                    <div class="filter">
-                        <p class="titleFilter">Couleur : </p>
-                        <div class="options">
-                            <div class="option colorFilter" id="Blanc">
-                                <input type="checkbox" name="colorBlanc" id="blanc">
-                                <label id="colorBlanc" class="labelFilter">Blanc</label>
-                            </div>
-                            <div class="option colorFilter" id="Noir">
-                                <input type="checkbox" name="colorNoir" id="noir">
-                                <label id="colorNoir" class="labelFilter">Noir</label>
-                            </div>
-                            <div class="option colorFilter" id="Gris">
-                                <input type="checkbox" name="colorGris" id="gris">
-                                <label id="colorGris" class="labelFilter">Gris</label>
-                            </div>
-                            <div class="option colorFilter" id="Bleu">
-                                <input type="checkbox" name="colorBleu" id="bleu">
-                                <label id="colorBleu" class="labelFilter">Bleu</label>
-                            </div>
-                            <div class="option colorFilter" id="Jaune">
-                                <input type="checkbox" name="colorJaune" id="jaune">
-                                <label id="colorJaune" class="labelFilter">Jaune</label>
-                            </div>
-                            <div class="option colorFilter" id="Rouge">
-                                <input type="checkbox" name="colorRouge" id="rouge">
-                                <label id="colorRouge" class="labelFilter">Rouge</label>
+            <p id="textButtonFavorite">Favori</p>
+        </button>
+        <section id="content">
+            <header id="header">
+                <svg id="headerBackground" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="800" preserveAspectRatio="none" viewBox="0 0 1440 800">
+                    <g mask="url(&quot;#SvgjsMask1155&quot;)" fill="none">
+                        <rect width="1440" height="800" x="0" y="0" fill="rgba(30, 29, 43, 1)"></rect>
+                        <path d="M0,344.648C63.595,345.282,112.659,292.852,164.832,256.484C215.026,221.496,261.875,185.269,298.721,136.422C343.776,76.692,403.431,17.018,401.889,-57.783C400.32,-133.877,345.273,-198.839,290.717,-251.908C239.062,-302.156,171.091,-326.98,102.484,-349.029C32.239,-371.605,-40.437,-399.423,-111.967,-381.324C-184.55,-362.959,-242.357,-308.955,-288.601,-250.074C-333.354,-193.091,-371.809,-125.58,-369.701,-53.155C-367.701,15.586,-316.13,69.806,-277.634,126.791C-245.098,174.954,-208.459,217.336,-162.733,253.217C-112.772,292.421,-63.503,344.015,0,344.648" fill="#14131c"></path>
+                        <path d="M1440 1495.1570000000002C1565.95 1469.442 1626.368 1327.7530000000002 1735.156 1259.271 1845.475 1189.826 2022.408 1209.224 2080.001 1092.279 2137.302 975.927 2053.987 837.739 2001.0639999999999 719.331 1958.501 624.102 1874.32 561.664 1807.166 481.849 1738.775 400.564 1697.283 294.245 1602.7069999999999 245.87199999999996 1499.711 193.19299999999998 1379.925 189.865 1265.187 204.64200000000005 1135.616 221.32899999999995 993.367 240.24 904.303 335.816 814.547 432.134 785.024 576.347 796.598 707.4929999999999 807.133 826.872 922.332 904.98 964.434 1017.184 1011.239 1141.921 961.7239999999999 1303.548 1055.693 1397.993 1150.816 1493.597 1307.8609999999999 1522.135 1440 1495.1570000000002" fill="#29273a"></path>
+                    </g>
+                    <defs>
+                        <mask id="SvgjsMask1155">
+                            <rect width="1440" height="800" fill="#ffffff"></rect>
+                        </mask>
+                    </defs>
+                </svg>
+                <div id="contentHeader">
+                    <h1><span class="blueHighlight">Nihfagou</span></h1>
+                    <h1>Products</h1>
+                    <p id="heroDescription">Découvrez la large gamme de produits. Vous pouvez en apprendre plus sur le processus de livraison ou encore sur comment fonctionne le service.</p>
+                    <a id="linkToGallery" href="#main" class="js-scrollTo">
+                        <button id="cta">
+                            Découvrir 
+                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.75 6.75L19.25 12L13.75 17.25"></path>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H4.75"></path>
+                        </svg>
+                        </button>
+                    </a>
+                </div>
+            </header>
+            <main id="main">
+                
+                <!-- <section id="leftSection" class="section">
+                    <div id="filters">
+                        <h2 class="titleSection">Filtres : </h2>
+                        <div class="filter">
+                            <p class="titleFilter">Couleur : </p>
+                            <div class="options">
+                                <div class="option colorFilter" id="Blanc">
+                                    <input type="checkbox" name="colorBlanc" id="blanc">
+                                    <label id="colorBlanc" class="labelFilter">Blanc</label>
+                                </div>
+                                <div class="option colorFilter" id="Noir">
+                                    <input type="checkbox" name="colorNoir" id="noir">
+                                    <label id="colorNoir" class="labelFilter">Noir</label>
+                                </div>
+                                <div class="option colorFilter" id="Gris">
+                                    <input type="checkbox" name="colorGris" id="gris">
+                                    <label id="colorGris" class="labelFilter">Gris</label>
+                                </div>
+                                <div class="option colorFilter" id="Bleu">
+                                    <input type="checkbox" name="colorBleu" id="bleu">
+                                    <label id="colorBleu" class="labelFilter">Bleu</label>
+                                </div>
+                                <div class="option colorFilter" id="Jaune">
+                                    <input type="checkbox" name="colorJaune" id="jaune">
+                                    <label id="colorJaune" class="labelFilter">Jaune</label>
+                                </div>
+                                <div class="option colorFilter" id="Rouge">
+                                    <input type="checkbox" name="colorRouge" id="rouge">
+                                    <label id="colorRouge" class="labelFilter">Rouge</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section> -->
+                </section> -->
 
-            <section id="rightSection" class="section">
-                <ul id="pathToHere">
-                    <li onclick="initGallery(true)">Menu</li>
-                </ul>
-                <div id="sortItems">
-                    <p>Tier par : </p>
-                    <select name="sortedData" id="sortedData" onchange="initGallery()">
-                        <option value="price-increase">prix croissant</option>
-                        <option value="price-decrease">prix décroissant</option>
-                    </select>
-                </div>
-                <div id="gallery">
-                    
-                </div>
-            </section>
-            <!-- <nav id="navMobileFilter">
-                <h3 id="filterTitlePopup" onclick="showPopup('filter')">Filtres</h3>
-            </nav> -->
-            
-            <!-- <div id="popupFilter">
+                <section id="rightSection" class="section">
+                    <ul id="pathToHere">
+                        <li onclick="initGallery(true)">Menu</li>
+                    </ul>
+                    <div id="sortItems">
+                        <p>Tier par : </p>
+                        <select name="sortedData" id="sortedData" onchange="initGallery()">
+                            <option value="price-increase">prix croissant</option>
+                            <option value="price-decrease">prix décroissant</option>
+                        </select>
+                    </div>
+                    <div id="gallery">
+                        
+                    </div>
+                </section>
+                <!-- <nav id="navMobileFilter">
+                    <h3 id="filterTitlePopup" onclick="showPopup('filter')">Filtres</h3>
+                </nav> -->
+                
+                <!-- <div id="popupFilter">
 
-            </div> -->
-        </main>
-        <footer>
-            <h2 class="titleSection">A propos : </h2>
-            <div id="sectionsFooter">
-                <div class="sectionFooter">
-                    <h3 class="titleSectionFooter">Mes reseaux</h3>
-                    <div class="linksFooter">
-                        <a href="/index.html" class="link">
-                            <p>Instagram</p>
-                        </a>
-                        <a href="/index.html" class="link">
-                            <p>Snapchat</p>
-                        </a>
-                        <a href="/index.html" class="link">
-                            <p>Telegram</p>
-                        </a>
+                </div> -->
+            </main>
+            <footer>
+                <h2 class="titleSection">A propos : </h2>
+                <div id="sectionsFooter">
+                    <div class="sectionFooter">
+                        <h3 class="titleSectionFooter">Mes reseaux</h3>
+                        <div class="linksFooter">
+                            <a href="/index.html" class="link">
+                                <p>Instagram</p>
+                            </a>
+                            <a href="/index.html" class="link">
+                                <p>Snapchat</p>
+                            </a>
+                            <a href="/index.html" class="link">
+                                <p>Telegram</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sectionFooter">
+                        <h3 class="titleSectionFooter">Informations</h3>
+                        <div class="linksFooter">
+                            <a href="/index.html" class="link">
+                                <p>Adresse</p>
+                            </a>
+                            <a href="/index.html" class="link">
+                                <p>Déroulement du service</p>
+                            </a>
+                            <a href="/index.html" class="link">
+                                <p>Mes services</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sectionFooter">
+                        <h3 class="titleSectionFooter">Naviguer</h3>
+                        <div class="linksFooter">
+                            <a href="#header" class="link js-scrollTo">
+                                <p>Haut de la page</p>
+                            </a>
+                            <a href="#main" class="link js-scrollTo">
+                                <p>Galerie</p>
+                            </a>
+                            <a href="#copyrights" class="link js-scrollTo">
+                                <p>Bas de la page</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="sectionFooter">
-                    <h3 class="titleSectionFooter">Informations</h3>
-                    <div class="linksFooter">
-                        <a href="/index.html" class="link">
-                            <p>Adresse</p>
-                        </a>
-                        <a href="/index.html" class="link">
-                            <p>Déroulement du service</p>
-                        </a>
-                        <a href="/index.html" class="link">
-                            <p>Mes services</p>
-                        </a>
-                    </div>
+                <div id="copyrights">
+                    <p class="copyright">copyright Xtsen 2021</p>
+                    <p class="copyright">Termes et conditions</p>
+                    <a class="copyright link" href="https://www.instagram.com/nesta.web/">@nesta.web</a>
                 </div>
-                <div class="sectionFooter">
-                    <h3 class="titleSectionFooter">Naviguer</h3>
-                    <div class="linksFooter">
-                        <a href="#header" class="link js-scrollTo">
-                            <p>Haut de la page</p>
-                        </a>
-                        <a href="#main" class="link js-scrollTo">
-                            <p>Galerie</p>
-                        </a>
-                        <a href="#copyrights" class="link js-scrollTo">
-                            <p>Bas de la page</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div id="copyrights">
-                <p class="copyright">copyright Xtsen 2021</p>
-                <p class="copyright">Termes et conditions</p>
-                <a class="copyright link" href="https://www.instagram.com/nesta.web/">@nesta.web</a>
-            </div>
-        </footer>
+            </footer>
+        </section>
+        <input type="checkbox" name="checkboxPopupFavorite" id="checkboxPopupFavorite">
         <!-- <input type="checkbox" id="popupFilterCheck" style="display: none"> -->
         <script src="./main.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

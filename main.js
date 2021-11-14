@@ -83,21 +83,38 @@ const products = [
 
 function load() {
     initGallery(true)
-
+    if (!window.localStorage.getItem("listIDs")) {
+        window.localStorage.setItem("listIDs", "")
+        console.log("done");
+    }
     // if (window.innerWidth <= 768) {
     //     mobileCreatePopups()
     // }
 }
 function createGallery(items, category) {
-    document.getElementById('gallery').innerHTML = ""
+    console.log("done");
+    
     index = 0
     if (category == "init") {
+        document.getElementById('gallery').innerHTML = ""
         itemsSorted = sortItems(items)
         while (index != items.length) {
             newItem(index, itemsSorted, category)
             index+=1
         }
+    }else if (category == "favs") {
+        while (index != items.length) {
+            newItem(index, items, category)
+            index+=1
+        }
     }else {
+        document.getElementById('gallery').innerHTML = ""
+        currentCategory = []
+        categories.forEach(item => {
+            if (item.name == category) {
+                currentCategory.push(item)
+            }
+        });
         productsInCategory = []
         products.forEach(product => {
             if (product.category == category) {
@@ -110,7 +127,6 @@ function createGallery(items, category) {
             index+=1
         }
     }
-
 }
 function newItem(index, items, category) {
 
@@ -121,7 +137,7 @@ function newItem(index, items, category) {
         itemContainer = document.createElement('div')
         itemContainer.setAttribute("id", "catgory" + String(index))
         itemContainer.setAttribute("class", "category")
-        itemContainer.setAttribute("onclick", `openCategory('${String(currentCategory.name)}')`)
+        itemContainer.setAttribute("onclick", `openCategory('${String(currentCategory.id)}')`)
         document.getElementById("gallery").appendChild(itemContainer)
 
         // SVG
@@ -142,18 +158,25 @@ function newItem(index, items, category) {
     }else {
 
         product = items[index]
+
+        if (category == "favs") {
+            mainContainer = "favoriteList"
+            console.log(mainContainer);
+        }else {
+            mainContainer = "gallery"
+        }
     
         // Container item
         itemContainer = document.createElement('div')
         itemContainer.setAttribute("id", "item" + String(index))
         itemContainer.setAttribute("class", "item")
         itemContainer.setAttribute("onclick", `sendData('${String(product.id)}')`)
-        document.getElementById("gallery").appendChild(itemContainer)
+        document.getElementById(mainContainer).appendChild(itemContainer)
     
         // Image
-        if (category == "Téléphones") {
+        if (product.category == "Téléphones") {
             imgSrc = `res/${product.category}/${(product.name.replace(/\s+/g, '')).toLowerCase() + product.color + String(product.storage)}.png`
-        }else if (category == "Écouteurs") {
+        }else if (product.category == "Écouteurs") {
             imgSrc = `res/${product.category}/${(product.name.replace(/\s+/g, '')).toLowerCase() + String(product.color)}.png`
         }
 
@@ -317,11 +340,57 @@ function sendData(productID) {
 function goThere(where) {
     window.location.href = where + ".html"
 }
-function openCategory(category) {
-    updatePath(category)
-    createGallery(products, category)
+function openCategory(categoryID) {
+    categories.forEach(category => {
+        if (category.id == categoryID){
+            currentCategory = category
+        }
+    });
+    updatePath(currentCategory.name)
+
+    createGallery(products, currentCategory.name)
 }
 function updatePath(category) {
     document.getElementById("pathToHere").innerHTML += "<li class='separatorCategory'> › </li>"
     document.getElementById("pathToHere").innerHTML += "<li> " + category + "</li>"
+}
+function getFavoriteList() {
+    checkboxPopupFavorite = document.getElementById("checkboxPopupFavorite")
+    if (checkboxPopupFavorite.checked == false) {
+        document.getElementById("wrapper").style.transform = "scale(200)"
+        document.getElementById("textButtonFavorite").innerHTML = "Fermer"
+        document.getElementById("svgButtonFavorite").innerHTML = `<svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L6.75 17.25"></path>
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75L17.25 17.25"></path>
+      </svg>`
+      document.getElementById("content").style.filter = "blur(4px)"
+      checkboxPopupFavorite.checked = true
+      showFavoriteList()
+    }else {
+        document.getElementById("wrapper").style.transform = "scale(1)"
+        document.getElementById("textButtonFavorite").innerHTML = "Favori"
+        document.getElementById("svgButtonFavorite").innerHTML = `<svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.995 7.23319C10.5455 5.60999 8.12832 5.17335 6.31215 6.65972C4.49599 8.14609 4.2403 10.6312 5.66654 12.3892L11.995 18.25L18.3235 12.3892C19.7498 10.6312 19.5253 8.13046 17.6779 6.65972C15.8305 5.18899 13.4446 5.60999 11.995 7.23319Z" clip-rule="evenodd"></path>
+    </svg>`
+    document.getElementById("content").style.filter = "blur(0)"
+    checkboxPopupFavorite.checked = false
+    }
+}
+function showFavoriteList() {
+    favs = []
+    listIDsNonSplited = window.localStorage.getItem("listIDs")
+    listIDs = listIDsNonSplited.split(",")
+    console.log(listIDs);
+    listIDs.forEach(id => {
+        id = Number(id)
+        products.forEach(product => {
+            if (id == product.id) {
+                favs.push(product)
+                return 0;
+            }
+        });
+    });
+    // remove empty item
+    favs.pop()
+    createGallery(favs, "favs")
 }

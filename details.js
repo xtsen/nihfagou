@@ -1,5 +1,10 @@
 function initDetails() {
     id = window.localStorage.getItem("product")
+    // window.localStorage.removeItem("listIDs")
+    if (!window.localStorage.getItem("listIDs")) {
+        window.localStorage.setItem("listIDs", "")
+    }
+
     product = undefined
     products.forEach(item => {
         if (item.id == id) {
@@ -25,7 +30,18 @@ function initDetails() {
     document.getElementById("name").innerText= product.name
     document.getElementById("price").innerText= product.price + " €"
 }
+function addToFavorite() {
+    id = window.localStorage.getItem("product")
+    IDs = window.localStorage.getItem("listIDs")
+    console.log(IDs);
+    console.log(String(id));
+    IDs += String(id) + ","
 
+    window.localStorage.setItem("listIDs", IDs)
+    console.log(window.localStorage.getItem("listIDs"));
+
+    successfullyAdded()
+}
 function successfullyAdded() {
     document.getElementById("success").style.transform = ("translateY(0%)")
     setTimeout(() => {
